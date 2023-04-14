@@ -1,0 +1,118 @@
+<style>
+  .banner-image {
+    padding-top: 75px;
+    padding-bottom: 10px;
+    text-align: center;
+    color: #f8f8f8;
+    background:
+      url(https://www.digitalmenta.com/wp-content/uploads/2019/04/potenciar-campanas-shopping.jpg) no-repeat center;
+    background-size: cover;
+  }
+
+  .banner-content {
+    position:
+      relative;
+    padding-top: 6%;
+    padding-bottom: 6%;
+    margin-top: 12%;
+    margin-bottom:
+      12%;
+    background-color: rgba(0, 0, 0, 0.7);
+    max-width: 660px;
+    overflow: hidden;
+  }
+
+  .angled-gradient-button {
+    background-size: 220%;
+    box-shadow: 0 .2em .3em rgba(0, 0, 0, 0.15);
+    color: white;
+    background-color: black;
+    background-position: 100%;
+    border: 3px solid black;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: 3px;
+    transition: all .2s ease-out;
+    font-weight: 900;
+    cursor: pointer;
+    letter-spacing: 2px;
+    background-image:
+      linear-gradient(110deg, black 0%, black 50%, transparent 50%, transparent 100%);
+    font-size: 14px;
+  }
+
+  .angled-gradient-button:hover {
+    transform:
+      translateY(-2px);
+    box-shadow: 0 0 .3em rgba(0, 0, 0, 0.25);
+    background-color:
+      yellow;
+    background-position: 0;
+    color: #fff;
+  }
+
+  .angled-gradient-button:active {
+    transform: translateY(-1px);
+  }
+
+  .full-width {
+    width: 99.4vw;
+    position:
+      relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+</style>
+<h1 style="text-align: center; color: black" class="mt-4">Products</h1>
+<div class="jumbotron">
+
+    <form name="produUpdate" action="/product/{{result._id}}/update" method="post" role="form"
+        enctype="multipart/form-data">
+        <div class="form-floating mb-3 mt-4">
+            <div class="form-group">
+                <label for="image">Product Image *</label>
+                <input type="file" class="form-control-file" id="image" name="file">
+            </div>
+            {{!-- <div class="custom-file">
+                <input type="file" class="custom-file-input" id="image" name="image">
+                <label class="custom-file-label" for="image">Product Image *</label>
+            </div> --}}
+        </div>
+
+        <div class="form-floating mb-3 mt-4">
+            <input type="text" class="form-control" value="{{result.name}}" id="name" name="name"
+                placeholder="Product Name" required />
+            <label for="name">Product Name *</label>
+        </div>
+
+        <div class="form-floating mb-3 mt-4">
+            <input type="number" class="form-control" id="price" value="{{result.price}}" name="price"
+                placeholder="Product Price" required />
+            <label for="price">Product Price *</label>
+        </div>
+
+        <div class="form-floating mb-3 mt-4">
+            <input type="text" class="form-control" id="category" name="category" value="{{result.category}}"
+                placeholder="Product Category" required />
+            <label for="category">Product Category *</label>
+        </div>
+
+        <div class="form-floating mb-3 mt-4">
+            <input type="number" class="form-control" id="quantity" name="quantity" value="{{result.quantity}}"
+                placeholder="Product Quantity" required />
+            <label for="quantity">Product Quantity *</label>
+        </div>
+
+        <div class="mb-3 mt-4 form-group">
+            <label for="description">Product Description *</label>
+            <textarea rows="5" id="description" class="form-control" name="description"
+                placeholder="Product Description" required style="resize: none;">{{result.description}}</textarea>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-secondary">Update</button>
+        </div>
+    </form>
+</div>

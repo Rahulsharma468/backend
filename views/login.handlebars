@@ -1,0 +1,99 @@
+<style>
+  .banner-image {
+    padding-top: 75px;
+    padding-bottom: 10px;
+    text-align: center;
+    color: #f8f8f8;
+    background:
+      url(https://www.digitalmenta.com/wp-content/uploads/2019/04/potenciar-campanas-shopping.jpg) no-repeat center;
+    background-size: cover;
+  }
+
+  .banner-content {
+    position:
+      relative;
+    padding-top: 6%;
+    padding-bottom: 6%;
+    margin-top: 12%;
+    margin-bottom:
+      12%;
+    background-color: rgba(0, 0, 0, 0.7);
+    max-width: 660px;
+    overflow: hidden;
+  }
+
+  .angled-gradient-button {
+    background-size: 220%;
+    box-shadow: 0 .2em .3em rgba(0, 0, 0, 0.15);
+    color: white;
+    background-color: black;
+    background-position: 100%;
+    border: 3px solid black;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    border-radius: 3px;
+    transition: all .2s ease-out;
+    font-weight: 900;
+    cursor: pointer;
+    letter-spacing: 2px;
+    background-image:
+      linear-gradient(110deg, black 0%, black 50%, transparent 50%, transparent 100%);
+    font-size: 14px;
+  }
+
+  .angled-gradient-button:hover {
+    transform:
+      translateY(-2px);
+    box-shadow: 0 0 .3em rgba(0, 0, 0, 0.25);
+    background-color:
+      yellow;
+    background-position: 0;
+    color: #fff;
+  }
+
+  .angled-gradient-button:active {
+    transform: translateY(-1px);
+  }
+
+  .full-width {
+    width: 99.4vw;
+    position:
+      relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+</style>
+<h1 style="text-align: center; color: black" class="mt-4">Login</h1>
+
+<div class="container">
+    <form method="POST" action="/login">
+        <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="text" class="form-control" id="email" name="email" autocomplete="false" placeholder="Email" />
+        </div>
+        <div>
+            {{!-- <div class="form-floating mb-3 mt-4">
+                <input type="text" class="form-control" id="password" name="password" placeholder="Email"
+                    data-toggle="password" />
+                <label for="password">Password *</label>
+            </div> --}}
+
+            <div class="form-group">
+                <label>Password *</label>
+                <input type="password" id="password" placeholder="Password" autocomplete="false" name="password" class="form-control" data-toggle="password">
+            </div>
+
+            <div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-lg angled-gradient-button">Submit</button>
+                </div>
+    </form>
+</div>
+
+
+
+<script type="text/javascript">
+    $("#password").password('toggle');
+</script>
