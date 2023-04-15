@@ -32,7 +32,6 @@ let productSchema = new Schema({
     },
     public_id: {
         type: String,
-        required: true
     },
     warrantyId: {
         type: ObjectId,
